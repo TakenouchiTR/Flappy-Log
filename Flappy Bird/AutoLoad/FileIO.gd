@@ -4,9 +4,8 @@ const FILEPATH = "user://data.sav"
 const VERSION = 2
 
 func save_file():
-	var file = File.new()
+	var file = FileAccess.open(FILEPATH, FileAccess.WRITE)
 	
-	file.open(FILEPATH, File.WRITE)
 	file.store_32(VERSION)
 	file.store_32(PlayerStats.high_score)
 	file.store_32(PlayerStats.points)
@@ -18,12 +17,11 @@ func save_file():
 	file.close()
 
 func load_file():
-	var file = File.new()
 	
-	if not file.file_exists(FILEPATH):
+	if not FileAccess.file_exists(FILEPATH):
 		return
 
-	file.open(FILEPATH, File.READ)
+	var file = FileAccess.open(FILEPATH, FileAccess.READ)
 	var version = file.get_32()
 	
 	match (version):

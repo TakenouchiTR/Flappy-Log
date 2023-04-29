@@ -9,17 +9,17 @@
 script = ExtResource( 1 )
 
 [node name="UI" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="UI"]
-margin_right = 600.0
-margin_bottom = 1024.0
+offset_right = 600.0
+offset_bottom = 1024.0
 color = Color( 0.137255, 0.356863, 0.454902, 1 )
 
 [node name="lblSettings" type="Label" parent="UI"]
-margin_right = 599.0
-margin_bottom = 92.0
+offset_right = 599.0
+offset_bottom = 92.0
 theme = ExtResource( 4 )
 text = "Settings"
 align = 1
@@ -27,30 +27,30 @@ valign = 1
 
 [node name="AndroidSettings" type="Control" parent="UI"]
 visible = false
-margin_right = 600.0
-margin_bottom = 1024.0
+offset_right = 600.0
+offset_bottom = 1024.0
 
 [node name="chkbtnJumpOnRelease" type="CheckButton" parent="UI/AndroidSettings"]
-margin_left = 24.0
-margin_top = 119.0
-margin_right = 231.0
-margin_bottom = 159.0
+offset_left = 24.0
+offset_top = 119.0
+offset_right = 231.0
+offset_bottom = 159.0
 theme = ExtResource( 3 )
 text = "Jump on tap release"
 
 [node name="btnMenu" type="Button" parent="UI"]
-margin_left = 40.0
-margin_top = 881.0
-margin_right = 276.0
-margin_bottom = 980.0
+offset_left = 40.0
+offset_top = 881.0
+offset_right = 276.0
+offset_bottom = 980.0
 theme = ExtResource( 2 )
 text = "Save"
 
 [node name="btnCancel" type="Button" parent="UI"]
-margin_left = 334.0
-margin_top = 880.0
-margin_right = 570.0
-margin_bottom = 979.0
+offset_left = 334.0
+offset_top = 880.0
+offset_right = 570.0
+offset_bottom = 979.0
 theme = ExtResource( 2 )
 text = "Cancel"
 

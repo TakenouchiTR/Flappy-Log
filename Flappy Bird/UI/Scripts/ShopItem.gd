@@ -25,7 +25,7 @@ func disable():
 func set_price(price):
 	$lblPrice.text = "Price: " + str(price)
 
-func set_name(name):
+func set_name_text(name):
 	$lblName.text = name
 
 func set_index(index):

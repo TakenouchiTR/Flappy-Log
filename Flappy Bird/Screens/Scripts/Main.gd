@@ -12,27 +12,27 @@ func _ready() -> void:
 	load_menu()
 
 func load_menu():
-	current_screen = MENU.instance()
+	current_screen = MENU.instantiate()
 	add_child(current_screen)
-	current_screen.connect("start_pressed", self, "on_menu_start_pressed")
-	current_screen.connect("settings_pressed", self, "on_menu_settings_pressed")
-	current_screen.connect("store_pressed", self, "on_menu_store_pressed")
+	current_screen.connect("start_pressed", Callable(self, "on_menu_start_pressed"))
+	current_screen.connect("settings_pressed", Callable(self, "on_menu_settings_pressed"))
+	current_screen.connect("store_pressed", Callable(self, "on_menu_store_pressed"))
 
 func load_settings():
-	current_screen = SETTINGS.instance()
+	current_screen = SETTINGS.instantiate()
 	add_child(current_screen)
-	current_screen.connect("screen_closed", self, "on_settings_screen_closed")
+	current_screen.connect("screen_closed", Callable(self, "on_settings_screen_closed"))
 
 func load_game():
-	current_screen = GAME.instance()
+	current_screen = GAME.instantiate()
 	add_child(current_screen)
-	current_screen.connect("game_ended", self, "on_game_ended")
-	current_screen.connect("game_restarted", self, "on_game_restarted")
+	current_screen.connect("game_ended", Callable(self, "on_game_ended"))
+	current_screen.connect("game_restarted", Callable(self, "on_game_restarted"))
 
 func load_store():
-	current_screen = STORE.instance()
+	current_screen = STORE.instantiate()
 	add_child(current_screen)
-	current_screen.connect("store_closed", self, "on_store_closed")
+	current_screen.connect("store_closed", Callable(self, "on_store_closed"))
 
 func on_menu_start_pressed():
 	current_screen.queue_free()

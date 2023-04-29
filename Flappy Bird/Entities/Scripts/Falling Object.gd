@@ -1,4 +1,4 @@
-extends Sprite
+extends Sprite2D
 
 const GRAVITY = 320
 const MOVE_SPEED = 128

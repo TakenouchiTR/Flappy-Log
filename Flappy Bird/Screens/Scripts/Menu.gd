@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	
 func _on_btnPlay_pressed() -> void:
 	$Timer.start()
-	$Sprite.frame += 1
+	$Sprite2D.frame += 1
 	log_awake = true
 	$Exclamation.visible = true
 

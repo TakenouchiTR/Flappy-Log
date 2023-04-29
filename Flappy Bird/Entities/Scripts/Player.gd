@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 const GRAVITY = 320
 const FLAP_STRENGTH = -200
@@ -11,10 +11,9 @@ enum State {
 }
 
 var player_state = State.Active
-var velocity = Vector2.ZERO
 var perform_jump = false
 
-onready var sprite = $Sprite
+@onready var sprite = $Sprite2D
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:
@@ -29,7 +28,9 @@ func apply_gravity(delta: float):
 	velocity.y = min(MAX_SPEED, velocity.y)
 
 func move():
-	velocity = move_and_slide(velocity)
+	set_velocity(velocity)
+	move_and_slide()
+	velocity = velocity
 	
 	if velocity.y < 0:
 		sprite.rotation_degrees = 90 * velocity.y / 256

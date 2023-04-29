@@ -2,7 +2,7 @@ extends Node2D
 
 signal screen_closed
 
-onready var platform_settings = {
+@onready var platform_settings = {
 	"Android": $UI/AndroidSettings,
 	"Windows": $UI/AndroidSettings,
 }
@@ -13,13 +13,13 @@ func _ready() -> void:
 		platform_settings[OS.get_name()].visible = true
 
 func load_settings():
-	$UI/AndroidSettings/chkbtnJumpOnRelease.pressed = PlayerStats.jump_on_release
+	$UI/AndroidSettings/chkbtnJumpOnRelease.button_pressed = PlayerStats.jump_on_release
 
-func apply_changes():
+func _apply_changes():
 	PlayerStats.jump_on_release = $UI/AndroidSettings/chkbtnJumpOnRelease.pressed
 
 func _on_btnMenu_pressed() -> void:
-	apply_changes()
+	_apply_changes()
 	FileIO.save_file()
 	emit_signal("screen_closed")
 

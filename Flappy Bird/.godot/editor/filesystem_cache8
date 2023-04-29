@@ -1,0 +1,70 @@
+2a60927148abd1d33b818b535e306557
+::res://::1682798888
+default_env.tres::Environment::-1::1682798873::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1676098014::0::1::::<><>::
+icon.png::CompressedTexture2D::3274021993717432327::1675546261::1682798888::1::::<><>::
+::res://android/::1675552510
+::res://android/plugins/::1675552510
+::res://AutoLoad/::1676169535
+FileIO.gd::GDScript::-1::1682798873::0::1::::<>Node<>::
+FileIO.tscn::PackedScene::-1::1682798873::0::1::::<><>::res://AutoLoad/FileIO.gd
+PlayerStats.gd::GDScript::-1::1682798873::0::1::::<>Node<>::
+PlayerStats.tscn::PackedScene::-1::1682798873::0::1::::<><>::res://AutoLoad/PlayerStats.gd
+::res://Entities/::1676079086
+Back Log Half.tscn::PackedScene::-1::1682798873::0::1::::<><>::res://Sprites/Player/Player_Back_0.png<>res://Entities/Scripts/Log Half.gd
+Background.tscn::PackedScene::-1::1682798873::0::1::::<><>::res://Entities/Scripts/Background.gd<>res://Sprites/Background.png
+Front Log Half.tscn::PackedScene::-1::1682798873::0::1::::<><>::res://Sprites/Player/Player_Front_0.png<>res://Entities/Scripts/Log Half.gd
+Obstacle.tscn::PackedScene::-1::1682798873::0::1::::<><>::res://Sprites/Chainsaw.png<>res://Entities/Scripts/Obstacle.gd
+Player.tscn::PackedScene::-1::1682798873::0::1::::<><>::res://Entities/Scripts/Player.gd<>res://Sprites/Player/Player_0.png
+::res://Entities/Scripts/::1676075412
+Background.gd::GDScript::-1::1682798873::0::1::::<>Node2D<>::
+Falling Object.gd::GDScript::-1::1682798873::0::1::::<>Sprite2D<>::
+Log Half.gd::GDScript::-1::1682798873::0::1::::<><>::
+Obstacle.gd::GDScript::-1::1682798873::0::1::::<>Node2D<>::
+Player.gd::GDScript::-1::1682798873::0::1::::<>CharacterBody2D<>::
+::res://Exports/::1675659648
+::res://Exports/Android/::1676098013
+::res://Exports/Windows/::1676006556
+::res://Font/::1676096462
+Kenney Future.ttf::FontFile::1849132221036574355::1676096445::1682798888::1::::<><>::
+License.txt::TextFile::-1::1676096462::0::1::::<><>::
+::res://Screens/::1676169615
+Game.tscn::PackedScene::-1::1682798873::0::1::::<><>::res://Entities/Player.tscn<>res://Entities/Obstacle.tscn<>res://Screens/Scripts/Game.gd<>res://Entities/Background.tscn<>res://UI/Themes/Button Main.tres<>res://Font/Kenney Future.ttf
+Main.tscn::PackedScene::-1::1682798873::0::1::::<><>::res://Screens/Scripts/Main.gd
+Menu.tscn::PackedScene::-1::1682798873::0::1::::<><>::res://Screens/Scripts/Menu.gd<>res://Sprites/Sleeping_Wood.png<>res://Sprites/Sleeping_Wood_Awake.png<>res://Sprites/Exclamation.png<>res://Sprites/Player/Player_0.png<>res://Font/Kenney Future.ttf<>res://UI/Main Theme.tres<>res://UI/Themes/Button Main.tres<>res://UI/Themes/Title.tres
+Settings.tscn::PackedScene::-1::1682798873::0::1::::<><>::res://Screens/Scripts/Settings.gd<>res://UI/Themes/Button Main.tres<>res://UI/Themes/Settings Item.tres<>res://UI/Themes/Title.tres
+Store.tscn::PackedScene::-1::1682798873::0::1::::<><>::res://Screens/Scripts/Store.gd<>res://UI/Themes/Button Main.tres<>res://UI/Themes/Title.tres
+::res://Screens/Scripts/::1676097978
+Game.gd::GDScript::-1::1682798873::0::1::::<>Node2D<>::
+Main.gd::GDScript::-1::1682798873::0::1::::<>Node2D<>::
+Menu.gd::GDScript::-1::1682798873::0::1::::<>Node2D<>::
+Settings.gd::GDScript::-1::1682798873::0::1::::<>Node2D<>::
+Store.gd::GDScript::-1::1682798873::0::1::::<>Node2D<>::
+::res://Sprites/::1676095774
+Background.png::CompressedTexture2D::3829362358837534305::1676001377::1682798888::1::::<><>::
+Chainsaw.png::CompressedTexture2D::1254592536299252324::1675559802::1682798888::1::::<><>::
+Exclamation.png::CompressedTexture2D::128481188910529946::1676002008::1682798888::1::::<><>::
+Player_Circle.png::CompressedTexture2D::8512908990458378810::1675546348::1682798888::1::::<><>::
+Sleeping_Wood.png::CompressedTexture2D::1138122831724554194::1676095713::1682798888::1::::<><>::
+Sleeping_Wood_Awake.png::CompressedTexture2D::1355442019891880195::1676095773::1682798888::1::::<><>::
+Square_32x32.png::CompressedTexture2D::69422853269271445::1675547347::1682798888::1::::<><>::
+::res://Sprites/Player/::1676095951
+Player_0.png::CompressedTexture2D::2451654245849971435::1675553389::1682798888::1::::<><>::
+Player_1.png::CompressedTexture2D::8799291969543717777::1676074598::1682798888::1::::<><>::
+Player_2.png::CompressedTexture2D::5936133515034869360::1676095912::1682798888::1::::<><>::
+Player_Back_0.png::CompressedTexture2D::8651804188861686135::1675556339::1682798888::1::::<><>::
+Player_Back_1.png::CompressedTexture2D::5700079182914344330::1676074786::1682798888::1::::<><>::
+Player_Back_2.png::CompressedTexture2D::8675150799748072202::1676095949::1682798888::1::::<><>::
+Player_Front_0.png::CompressedTexture2D::6305214580517513418::1675556111::1682798888::1::::<><>::
+Player_Front_1.png::CompressedTexture2D::5717037550232547020::1676074956::1682798888::1::::<><>::
+Player_Front_2.png::CompressedTexture2D::3698475075288663712::1676095935::1682798888::1::::<><>::
+::res://UI/::1676169277
+Main Theme.tres::Theme::-1::1682798873::0::1::::<><>::res://Font/Kenney Future.ttf
+ShopItem.tscn::PackedScene::-1::1682798873::0::1::::<><>::res://Sprites/Player/Player_0.png<>res://UI/Scripts/ShopItem.gd<>res://UI/Themes/Shop Text.tres<>res://UI/Themes/Button Main.tres
+::res://UI/Scripts/::1676095488
+ShopItem.gd::GDScript::-1::1682798873::0::1::::<>Control<>::
+::res://UI/Themes/::1676169277
+Button Main.tres::Theme::-1::1682798873::0::1::::<><>::res://Font/Kenney Future.ttf
+Settings Item.tres::Theme::-1::1682798873::0::1::::<><>::res://Font/Kenney Future.ttf
+Shop Text.tres::Theme::-1::1682798873::0::1::::<><>::res://Font/Kenney Future.ttf
+Title.tres::Theme::-1::1682798873::0::1::::<><>::res://Font/Kenney Future.ttf

@@ -1,25 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://c7gocwe56g3jk"]
 
-[ext_resource path="res://Entities/Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Player/Player_0.png" type="Texture" id=2]
+[ext_resource type="Script" path="res://Entities/Scripts/Player.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://ba6unfwab4ak6" path="res://Sprites/Player/Player_0.png" id="2"]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id="1"]
 radius = 16.0312
 
-[node name="Player" type="KinematicBody2D"]
-script = ExtResource( 1 )
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource("1")
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 2.98023e-08, -1.78814e-07 )
-scale = Vector2( 0.268, 0.268 )
-texture = ExtResource( 2 )
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.98023e-08, -1.78814e-07)
+scale = Vector2(0.268, 0.268)
+texture = ExtResource("2")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 7
+collision_layer = 4
+collision_mask = 0
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 1 )
+shape = SubResource("1")

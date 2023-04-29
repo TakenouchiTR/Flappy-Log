@@ -16,19 +16,19 @@ const NAMES = [
 	"Walnut",
 ]
 
-onready var store_items = $StoreItems
+@onready var store_items = $StoreItems
 
 func _ready() -> void:
 	display_points()
 	for i in range(len(PlayerStats.unlocked_skins)):
-		var store_item = STORE_ITEM.instance()
+		var store_item = STORE_ITEM.instantiate()
 		store_items.add_child(store_item)
-		store_item.rect_position.y = i * PADDING + Y_OFFSET
+		store_item.position.y = i * PADDING + Y_OFFSET
 		store_item.set_price(PRICES[i])
-		store_item.set_name(NAMES[i])
+		store_item.set_name_text(NAMES[i])
 		store_item.set_index(i)
-		store_item.connect("item_purchased", self, "on_item_purchased")
-		store_item.connect("item_selected", self, "on_item_selected")
+		store_item.connect("item_purchased", Callable(self, "on_item_purchased"))
+		store_item.connect("item_selected", Callable(self, "on_item_selected"))
 	
 	set_item_statuses()
 
