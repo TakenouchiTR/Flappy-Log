@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/Player/Player_Front_0.png" type="Texture" id=1]
+[ext_resource path="res://Entities/Scripts/Log Half.gd" type="Script" id=2]
+
+[node name="Front Log Half" type="Sprite"]
+scale = Vector2( 0.268, 0.268 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+texture_name = "res://Sprites/Player/Player_Front_"

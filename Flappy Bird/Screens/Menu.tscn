@@ -1,0 +1,95 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Screens/Scripts/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Sleeping_Wood.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Sleeping_Wood_Awake.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Exclamation.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Player/Player_0.png" type="Texture" id=5]
+[ext_resource path="res://Font/Kenney Future.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://UI/Main Theme.tres" type="Theme" id=7]
+[ext_resource path="res://UI/Themes/Button Main.tres" type="Theme" id=8]
+[ext_resource path="res://UI/Themes/Title.tres" type="Theme" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+font_data = ExtResource( 6 )
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Log" type="Sprite" parent="."]
+position = Vector2( 308, 409 )
+texture = ExtResource( 5 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 251, 116 )
+frames = SubResource( 1 )
+offset = Vector2( 51, 237 )
+
+[node name="Exclamation" type="Sprite" parent="."]
+visible = false
+position = Vector2( 422, 242 )
+texture = ExtResource( 4 )
+offset = Vector2( -22, -2 )
+
+[node name="btnPlay" type="Button" parent="."]
+margin_left = 100.0
+margin_top = 713.0
+margin_right = 510.0
+margin_bottom = 836.0
+theme = ExtResource( 7 )
+custom_fonts/font = SubResource( 3 )
+text = "Play"
+
+[node name="btnSettings" type="Button" parent="."]
+margin_left = 101.0
+margin_top = 875.0
+margin_right = 284.0
+margin_bottom = 998.0
+theme = ExtResource( 8 )
+text = "Settings"
+
+[node name="btnStore" type="Button" parent="."]
+margin_left = 327.0
+margin_top = 875.0
+margin_right = 510.0
+margin_bottom = 998.0
+theme = ExtResource( 8 )
+text = "Store"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="lblHighScore" type="Label" parent="."]
+margin_top = 524.0
+margin_right = 600.0
+margin_bottom = 656.0
+theme = ExtResource( 9 )
+text = "High Score: 0
+Points: 0"
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="."]
+margin_top = 16.0
+margin_right = 600.0
+margin_bottom = 145.0
+theme = ExtResource( 9 )
+text = "I Don't Have a 
+Fucking Clue"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="btnPlay" to="." method="_on_btnPlay_pressed"]
+[connection signal="pressed" from="btnSettings" to="." method="_on_btnSettings_pressed"]
+[connection signal="pressed" from="btnStore" to="." method="_on_btnStore_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
