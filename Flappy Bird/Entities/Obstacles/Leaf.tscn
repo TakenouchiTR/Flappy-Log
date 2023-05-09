@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://5fma3cbnf4rb"]
+
+[ext_resource type="Texture2D" uid="uid://b24utwkxjet7s" path="res://Sprites/Obstacles/Leaf.png" id="1_fktkg"]
+
+[node name="Leaf" type="Sprite2D"]
+position = Vector2(0, 300)
+texture = ExtResource("1_fktkg")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(55, -298)
+polygon = PackedVector2Array(-4, 20, -66, 86, -116, 172, -129, 224, -125, 276, -97, 596, 16, 104)

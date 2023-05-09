@@ -17,14 +17,17 @@ config/icon="res://icon.png"
 
 [autoload]
 
-FileIO="*res://AutoLoad/FileIO.tscn"
+PlayerIO="*res://AutoLoad/PlayerIO.tscn"
 PlayerStats="*res://AutoLoad/PlayerStats.tscn"
+SkinIO="*res://AutoLoad/SkinIO.tscn"
+Skins="*res://AutoLoad/Skins.tscn"
+FileIO="*res://AutoLoad/FileIO.tscn"
 
 [display]
 
 window/size/viewport_width=600
 window/size/viewport_height=1024
-window/stretch/mode="2d"
+window/stretch/mode="canvas_items"
 window/handheld/orientation="portrait"
 
 [global]
@@ -72,6 +75,7 @@ flap={
 2d_physics/layer_1="KillZone"
 2d_physics/layer_2="Score"
 2d_physics/layer_3="Player"
+2d_physics/layer_4="WinZone"
 
 [physics]
 
@@ -79,4 +83,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 environment/defaults/default_environment="res://default_env.tres"

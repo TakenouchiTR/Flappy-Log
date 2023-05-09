@@ -1,19 +1,24 @@
 res://default_env.tres
-res://Entities/Player.tscn
-res://UI/Themes/Button Main.tres
+res://Entities/Player/Log.tscn
 res://UI/Main Theme.tres
-res://UI/Themes/Title.tres
-res://UI/Themes/Settings Item.tres
+res://UI/Themes/Button Main.tres
 res://UI/Themes/Shop Text.tres
-res://Entities/Scripts/Player.gd
-res://Entities/Obstacle.tscn
-res://Screens/Scripts/Game.gd
-res://UI/Scripts/ShopItem.gd
-res://Screens/Store.tscn
+res://AutoLoad/SkinIO.tscn
+res://AutoLoad/PlayerIO.tscn
+res://AutoLoad/FileIO.tscn
+res://Screens/Levels/ForestLevel.tscn
+res://Screens/Levels/Scripts/ForestLevel.gd
+res://Entities/Player/Scripts/Player.gd
+res://Shaders/ColorPalette.gdshader
+res://Screens/Menu.tscn
+res://AutoLoad/Scripts/Skins.gd
+res://AutoLoad/Scripts/PlayerIO.gd
+res://Shaders/LogShader.gdshader
 res://Screens/Scripts/Store.gd
-res://Screens/Main.tscn
-res://AutoLoad/FileIO.gd
-res://Screens/Game.tscn
-res://Entities/Back Log Half.tscn
-res://Entities/Front Log Half.tscn
-res://Entities/Scripts/Obstacle.gd
+res://Screens/Levels/Scripts/PollenLevel.gd
+res://Data/skins.txt
+res://AutoLoad/Scripts/SkinIO.gd
+res://Entities/Player/PlayerLog.tscn
+res://Entities/Player/Scripts/PlayerLog.gd
+res://Entities/Log.tscn
+res://Entities/Scripts/Log.gd

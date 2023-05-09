@@ -1,6 +1,4 @@
-extends Node2D
-
-signal screen_closed
+extends "res://Screens/Scripts/Screen.gd"
 
 @onready var platform_settings = {
 	"Android": $UI/AndroidSettings,
@@ -16,13 +14,13 @@ func load_settings():
 	$UI/AndroidSettings/chkbtnJumpOnRelease.button_pressed = PlayerStats.jump_on_release
 
 func _apply_changes():
-	PlayerStats.jump_on_release = $UI/AndroidSettings/chkbtnJumpOnRelease.pressed
+	PlayerStats.jump_on_release = $UI/AndroidSettings/chkbtnJumpOnRelease.button_pressed
 
 func _on_btnMenu_pressed() -> void:
 	_apply_changes()
 	FileIO.save_file()
-	emit_signal("screen_closed")
+	screen_closed.emit(load("res://Screens/Menu.tscn").instantiate())
 
 
 func _on_btnCancel_pressed() -> void:
-	emit_signal("screen_closed")
+	screen_closed.emit(load("res://Screens/Menu.tscn").instantiate())

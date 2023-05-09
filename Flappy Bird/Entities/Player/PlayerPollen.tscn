@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://Entities/Player/Scripts/Player.gd" id="1_cnjlp"]
+[ext_resource type="Texture2D" uid="uid://d37ckwb4malpx" path="res://Sprites/Placeholders/32x32_colored_circles.png" id="2_eurkt"]
+[ext_resource type="AudioStream" uid="uid://dqdfynhv5g7u" path="res://Audio/SoundEffects/rising_chirp.wav" id="3_xkkrl"]
+
+[sub_resource type="CircleShape2D" id="1"]
+radius = 16.0312
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_cnjlp")
+gravity = 160
+jump_strength = -100
+max_speed = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.98023e-08, -1.78814e-07)
+texture = ExtResource("2_eurkt")
+hframes = 10
+vframes = 10
+frame = 3
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("1")
+
+[node name="JumpAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xkkrl")

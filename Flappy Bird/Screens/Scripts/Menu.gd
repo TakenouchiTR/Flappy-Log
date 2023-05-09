@@ -1,15 +1,13 @@
-extends Node2D
+extends "res://Screens/Scripts/Screen.gd"
 
-signal start_pressed
-signal settings_pressed
-signal store_pressed
+@onready var high_score_label := $CanvasLayer/Control/lblHighScore
 
 var log_awake = false
 var move_factor = 1
 
 func _ready() -> void:
-	$lblHighScore.text = "High Score: " + str(PlayerStats.high_score)
-	$lblHighScore.text += "\nPoints: " + str(PlayerStats.points)
+	high_score_label.text = "High Score: " + str(PlayerStats.high_scores[1])
+	high_score_label.text += "\nPoints: " + str(PlayerStats.points)
 	
 	$Log.texture = load("res://Sprites/Player/Player_" + str(PlayerStats.selected_skin) + ".png")
 
@@ -28,10 +26,10 @@ func _on_btnPlay_pressed() -> void:
 	$Exclamation.visible = true
 
 func _on_Timer_timeout() -> void:
-	emit_signal("start_pressed")
+	screen_closed.emit(load("res://Screens/LevelSelect.tscn").instantiate())
 
 func _on_btnSettings_pressed() -> void:
-	emit_signal("settings_pressed")
+	screen_closed.emit(load("res://Screens/Settings.tscn").instantiate())
 
 func _on_btnStore_pressed() -> void:
-	emit_signal("store_pressed")
+	screen_closed.emit(load("res://Screens/Store.tscn").instantiate())

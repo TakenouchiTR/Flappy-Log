@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgkwkyt86m3dk"]
+
+[ext_resource type="Shader" path="res://Shaders/LogShader.gdshader" id="1_u2m1l"]
+[ext_resource type="Texture2D" uid="uid://ckobp3n7ij4cw" path="res://Sprites/Player/Player_0_base.png" id="2_1qxed"]
+[ext_resource type="Script" path="res://Entities/Scripts/Log.gd" id="3_2cft0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8mvkp"]
+shader = ExtResource("1_u2m1l")
+shader_parameter/color0 = Color(0, 0, 0, 1)
+shader_parameter/color1 = Color(0.8, 0.8, 0.3, 1)
+shader_parameter/color2 = Color(0.4, 0.2, 0.6, 1)
+shader_parameter/color3 = Color(0.9, 0.7, 0.1, 1)
+shader_parameter/color4 = Color(0, 0.1, 0.4, 1)
+shader_parameter/color5 = Color(0.2, 0.5, 0.7, 1)
+shader_parameter/color6 = Color(0.9, 0.4, 0.3, 1)
+shader_parameter/color7 = Color(0.8, 0.8, 0.3, 1)
+shader_parameter/color8 = Color(0.8, 0.8, 0.3, 1)
+shader_parameter/color9 = Color(0.8, 0.8, 0.3, 1)
+shader_parameter/color10 = Color(0.8, 0.8, 0.3, 1)
+shader_parameter/color11 = Color(0.8, 0.8, 0.3, 1)
+shader_parameter/color12 = Color(0.8, 0.8, 0.3, 1)
+shader_parameter/color13 = Color(0.8, 0.8, 0.3, 1)
+shader_parameter/color14 = Color(0.8, 0.8, 0.3, 1)
+shader_parameter/color15 = Color(0.8, 0.8, 0.3, 1)
+
+[node name="Log" type="Sprite2D"]
+material = SubResource("ShaderMaterial_8mvkp")
+position = Vector2(2.98023e-08, -1.78814e-07)
+scale = Vector2(0.268, 0.268)
+texture = ExtResource("2_1qxed")
+script = ExtResource("3_2cft0")

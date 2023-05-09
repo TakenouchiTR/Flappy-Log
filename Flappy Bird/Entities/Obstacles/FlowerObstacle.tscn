@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddl514uqf3atq"]
+
+[ext_resource type="Script" path="res://Entities/Obstacles/Scripts/FlowerObstacle.gd" id="1_6r1qa"]
+[ext_resource type="PackedScene" uid="uid://5fma3cbnf4rb" path="res://Entities/Obstacles/Leaf.tscn" id="2_h5ds4"]
+[ext_resource type="PackedScene" uid="uid://qo3kf3mpqyfm" path="res://Entities/Obstacles/Flower.tscn" id="3_td68n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pka6k"]
+size = Vector2(20, 144)
+
+[node name="LeafObstacle" type="Node2D"]
+script = ExtResource("1_6r1qa")
+y_range = 100
+
+[node name="Top3" parent="." instance=ExtResource("2_h5ds4")]
+position = Vector2(-18, -531)
+rotation = 0.261799
+scale = Vector2(1, -1)
+
+[node name="Top" parent="." instance=ExtResource("2_h5ds4")]
+position = Vector2(21, -450)
+rotation = 3.14159
+scale = Vector2(-1, 1)
+
+[node name="Top4" parent="." instance=ExtResource("2_h5ds4")]
+position = Vector2(156, -488)
+rotation = 2.87979
+scale = Vector2(-1, 1)
+
+[node name="Top5" parent="." instance=ExtResource("2_h5ds4")]
+position = Vector2(118, -599)
+rotation = 3.66519
+scale = Vector2(-1, 1)
+
+[node name="Top2" parent="." instance=ExtResource("2_h5ds4")]
+position = Vector2(139, -450)
+rotation = 3.14159
+scale = Vector2(-1, 1)
+
+[node name="Bottom3" parent="." instance=ExtResource("2_h5ds4")]
+position = Vector2(70, 436)
+rotation = 0.0872665
+
+[node name="Flower" parent="." instance=ExtResource("3_td68n")]
+position = Vector2(68, 0)
+
+[node name="Bottom" parent="." instance=ExtResource("2_h5ds4")]
+position = Vector2(10, 472)
+rotation = -0.785397
+
+[node name="Bottom2" parent="." instance=ExtResource("2_h5ds4")]
+position = Vector2(116, 474)
+rotation = 0.261799
+
+[node name="ScoreArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreArea"]
+position = Vector2(193, -43)
+shape = SubResource("RectangleShape2D_pka6k")
+
+[connection signal="area_entered" from="Top3/Area2D" to="." method="_on_KillBox_area_entered"]
+[connection signal="area_entered" from="Top/Area2D" to="." method="_on_KillBox_area_entered"]
+[connection signal="area_entered" from="Top4/Area2D" to="." method="_on_KillBox_area_entered"]
+[connection signal="area_entered" from="Top5/Area2D" to="." method="_on_KillBox_area_entered"]
+[connection signal="area_entered" from="Top2/Area2D" to="." method="_on_KillBox_area_entered"]
+[connection signal="area_entered" from="Bottom3/Area2D" to="." method="_on_KillBox_area_entered"]
+[connection signal="area_entered" from="Flower/Area2D" to="." method="_on_win_area_entered"]
+[connection signal="area_entered" from="Bottom/Area2D" to="." method="_on_KillBox_area_entered"]
+[connection signal="area_entered" from="Bottom2/Area2D" to="." method="_on_KillBox_area_entered"]
+[connection signal="area_entered" from="ScoreArea" to="." method="_on_ScoreTrigger_area_entered"]
+
+[editable path="Top3"]
+[editable path="Top"]
+[editable path="Top4"]
+[editable path="Top5"]
+[editable path="Top2"]
+[editable path="Bottom3"]
+[editable path="Flower"]
+[editable path="Bottom"]
+[editable path="Bottom2"]

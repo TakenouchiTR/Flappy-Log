@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://kk316a775lnb"]
+
+[ext_resource type="Script" path="res://AutoLoad/Scripts/PlayerIO.gd" id="1_d1k6q"]
+
+[node name="ScoreIO" type="Node"]
+script = ExtResource("1_d1k6q")

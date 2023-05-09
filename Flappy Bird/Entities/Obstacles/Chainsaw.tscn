@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://xcohjeoylsij"]
+
+[ext_resource type="Texture2D" uid="uid://xi1hdo0p5uqr" path="res://Sprites/Obstacles/Chainsaw.png" id="1_vxyfg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_veopo"]
+atlas = ExtResource("1_vxyfg")
+region = Rect2(0, 0, 96, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj5n2"]
+atlas = ExtResource("1_vxyfg")
+region = Rect2(96, 0, 96, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t43vj"]
+atlas = ExtResource("1_vxyfg")
+region = Rect2(192, 0, 96, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_486qw"]
+atlas = ExtResource("1_vxyfg")
+region = Rect2(288, 0, 96, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltcub"]
+atlas = ExtResource("1_vxyfg")
+region = Rect2(384, 0, 96, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crgy5"]
+atlas = ExtResource("1_vxyfg")
+region = Rect2(480, 0, 96, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjxho"]
+atlas = ExtResource("1_vxyfg")
+region = Rect2(576, 0, 96, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3h0t"]
+atlas = ExtResource("1_vxyfg")
+region = Rect2(672, 0, 96, 600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wcyv3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_veopo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dj5n2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t43vj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_486qw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltcub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crgy5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjxho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3h0t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 60.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="6"]
+radius = 38.0
+height = 614.0
+
+[node name="Chainsaw" type="AnimatedSprite2D"]
+position = Vector2(0, -297)
+rotation = 3.14159
+sprite_frames = SubResource("SpriteFrames_wcyv3")
+frame_progress = 0.884652
+
+[node name="KillBox" type="Area2D" parent="."]
+position = Vector2(0.000752949, -297)
+rotation = -3.14159
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillBox"]
+position = Vector2(0, -316)
+shape = SubResource("6")

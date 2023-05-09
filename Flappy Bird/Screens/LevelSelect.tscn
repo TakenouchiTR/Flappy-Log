@@ -1,0 +1,145 @@
+[gd_scene load_steps=4 format=3 uid="uid://txsmll234sma"]
+
+[ext_resource type="Script" path="res://Screens/LevelSelect.gd" id="1_p2v83"]
+[ext_resource type="Theme" uid="uid://bibux11p0isw6" path="res://UI/Main Theme.tres" id="2_72igk"]
+[ext_resource type="Texture2D" uid="uid://bmv7wtp1a54e2" path="res://icon.png" id="3_ejequ"]
+
+[node name="LevelSelect" type="CanvasLayer"]
+script = ExtResource("1_p2v83")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.164706, 0.384314, 0.54902, 1)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 6.0
+offset_right = 6.0
+offset_bottom = 71.0
+grow_horizontal = 2
+theme = ExtResource("2_72igk")
+theme_override_font_sizes/font_size = 60
+text = "Level Select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelNameLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.132
+anchor_right = 1.0
+anchor_bottom = 0.18
+grow_horizontal = 2
+theme = ExtResource("2_72igk")
+theme_override_font_sizes/font_size = 42
+text = "The Beginning"
+horizontal_alignment = 1
+
+[node name="LevelSelect" type="Control" parent="Control"]
+layout_mode = 1
+anchor_top = 0.204
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="ColorRect" parent="Control/LevelSelect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_right = 0.85
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)
+
+[node name="PreviewImage" type="TextureRect" parent="Control/LevelSelect/CanvasLayer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_72igk")
+texture = ExtResource("3_ejequ")
+stretch_mode = 6
+
+[node name="PrevLevelButton" type="Button" parent="Control/LevelSelect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.4
+anchor_right = 0.1
+anchor_bottom = 0.6
+offset_top = -3.99999
+offset_right = 8.0
+offset_bottom = 4.00002
+grow_vertical = 2
+theme = ExtResource("2_72igk")
+
+[node name="NextLevelButton" type="Button" parent="Control/LevelSelect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9
+anchor_top = 0.4
+anchor_right = 0.95
+anchor_bottom = 0.6
+offset_left = -8.0
+offset_top = -4.0
+offset_bottom = 4.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("2_72igk")
+
+[node name="HighScoreLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.518
+anchor_right = 1.0
+anchor_bottom = 0.556
+offset_top = -0.432007
+offset_bottom = -0.344055
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_72igk")
+text = "High Score: 0"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="Control"]
+layout_mode = 1
+offset_left = 222.0
+offset_top = 616.0
+offset_right = 390.0
+offset_bottom = 678.0
+theme = ExtResource("2_72igk")
+text = "Play"
+
+[node name="BackButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 726.0
+offset_right = 389.0
+offset_bottom = 788.0
+theme = ExtResource("2_72igk")
+text = "Back"
+
+[connection signal="pressed" from="Control/LevelSelect/PrevLevelButton" to="." method="_on_prev_level_button_pressed"]
+[connection signal="pressed" from="Control/LevelSelect/NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="Control/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/BackButton" to="." method="_on_back_button_pressed"]

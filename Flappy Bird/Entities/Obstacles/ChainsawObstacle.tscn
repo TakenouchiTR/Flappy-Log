@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://befn51qt05xw6"]
+
+[ext_resource type="Script" path="res://Entities/Obstacles/Scripts/Obstacle.gd" id="1_1ia26"]
+[ext_resource type="PackedScene" uid="uid://xcohjeoylsij" path="res://Entities/Obstacles/Chainsaw.tscn" id="2_4pih7"]
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(11, 50)
+
+[node name="ChainsawObstacle" type="Node2D"]
+script = ExtResource("1_1ia26")
+
+[node name="Top" parent="." instance=ExtResource("2_4pih7")]
+position = Vector2(0, -495.5)
+scale = Vector2(1.5, 1.5)
+autoplay = "default"
+frame_progress = 0.304233
+
+[node name="Bottom" parent="." instance=ExtResource("2_4pih7")]
+position = Vector2(1, 495.5)
+rotation = 0.0
+scale = Vector2(1.5, 1.5)
+autoplay = "default"
+frame_progress = 0.304233
+
+[node name="ScoreTrigger" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreTrigger"]
+shape = SubResource("2")
+
+[connection signal="area_entered" from="Top/KillBox" to="." method="_on_KillBox_area_entered"]
+[connection signal="area_entered" from="Bottom/KillBox" to="." method="_on_KillBox_area_entered"]
+[connection signal="area_entered" from="ScoreTrigger" to="." method="_on_ScoreTrigger_area_entered"]
+
+[editable path="Top"]
+[editable path="Bottom"]

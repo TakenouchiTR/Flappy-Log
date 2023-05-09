@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://7exdwbyj256q"]
+
+[ext_resource type="Script" path="res://Screens/Levels/Scripts/ForestLevel.gd" id="1_wl43b"]
+[ext_resource type="PackedScene" path="res://Entities/Background.tscn" id="2_hromi"]
+[ext_resource type="PackedScene" uid="uid://2ciahrb3w074" path="res://Entities/Player/PlayerLog.tscn" id="4_eg7ed"]
+[ext_resource type="Theme" uid="uid://bibux11p0isw6" path="res://UI/Main Theme.tres" id="5_2x5vb"]
+[ext_resource type="FontFile" uid="uid://1ly641ihsl4n" path="res://Font/Kenney Future.ttf" id="6_nu2h2"]
+[ext_resource type="Theme" uid="uid://bci48k31qmg5s" path="res://UI/Themes/Button Main.tres" id="7_osum6"]
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(300.75, 37.5)
+
+[sub_resource type="FontFile" id="3"]
+fallbacks = Array[Font]([ExtResource("6_nu2h2")])
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/32/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/32/0/kerning_overrides/32/0 = Vector2(0, 0)
+
+[node name="ForestLevel" type="Node2D"]
+script = ExtResource("1_wl43b")
+
+[node name="Background" parent="." instance=ExtResource("2_hromi")]
+scale = Vector2(1, 1.01)
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("4_eg7ed")]
+position = Vector2(57, 178)
+collision_layer = 4
+collision_mask = 4
+
+[node name="KillFloor" type="Area2D" parent="."]
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillFloor"]
+position = Vector2(150, 1043)
+shape = SubResource("2")
+
+[node name="KillCeiling" type="Area2D" parent="."]
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillCeiling"]
+position = Vector2(152, -20)
+shape = SubResource("2")
+
+[node name="lblScore" type="Label" parent="."]
+offset_left = 19.0
+offset_right = 614.0
+offset_bottom = 61.0
+theme = ExtResource("5_2x5vb")
+theme_override_fonts/font = SubResource("3")
+text = "Score: 0"
+
+[node name="btnRestart" type="Button" parent="."]
+visible = false
+offset_left = 181.0
+offset_top = 805.0
+offset_right = 404.0
+offset_bottom = 882.0
+theme = ExtResource("7_osum6")
+text = "Restart"
+
+[node name="btnReturn" type="Button" parent="."]
+visible = false
+offset_left = 180.0
+offset_top = 894.0
+offset_right = 403.0
+offset_bottom = 971.0
+theme = ExtResource("7_osum6")
+text = "Menu"
+
+[node name="ObstacleTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="area_entered" from="KillFloor" to="." method="_on_Obstacle_kill_area_entered"]
+[connection signal="area_entered" from="KillCeiling" to="." method="_on_Obstacle_kill_area_entered"]
+[connection signal="pressed" from="btnRestart" to="." method="_on_btnRestart_pressed"]
+[connection signal="pressed" from="btnReturn" to="." method="_on_btnReturn_pressed"]
+[connection signal="timeout" from="ObstacleTimer" to="." method="_on_obstacle_timer_timeout"]

@@ -1,4 +1,4 @@
-extends Node2D
+extends "res://Screens/Scripts/Screen.gd"
 
 signal store_closed
 
@@ -59,5 +59,5 @@ func on_item_selected(index):
 	set_item_statuses()
 
 func _on_btnMenu_pressed() -> void:
-	FileIO.save_file()
-	emit_signal("store_closed")
+	PlayerIO.save_file()
+	screen_closed.emit(load("res://Screens/Menu.tscn").instantiate())
